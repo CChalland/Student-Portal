@@ -8,6 +8,7 @@ end
 #Tyler was here
 #So was Rob#
 # Kevin was third
+# Cole was last
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
