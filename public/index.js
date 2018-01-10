@@ -77,28 +77,30 @@ var ShowPage = {
   data: function() {
     return {
       student: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone_number: "",
-        short_bio: "",
-        linkedin_url: "",
-        twitter_handle: "",
-        personal_blog_url: "",
-        online_resume_url: "",
-        github_url: "",
-        photo: ""
+        first_name: "Chappy",
+        last_name: "Mark",
+        email: "cheekymark@email.com",
+        phone_number: "312-213-3433",
+        short_bio:
+          "I'm a cheeky chap from England and struggle with american day to day living.",
+        linkedin_url: "https://www.linkedin.com./in/KingOfChaps",
+        twitter_handle: "@ChappyCheeks",
+        personal_blog_url: "https://www.markschappycheeks.com",
+        online_resume_url: "https://www.idk-cheeks.com",
+        github_url: "https://www.github.com/markschappycheeks",
+        photo:
+          "http://www.haverigg.cumbria.sch.uk/images/library/Logos/cheekymonkey[1].jpg"
       },
       errors: []
     };
   },
-  created: function() {
-    axios.get("/v1/students").then(
-      function(response) {
-        this.student = response.data;
-      }.bind(this)
-    );
-  },
+  // created: function() {
+  //   axios.get("/v1/students").then(
+  //     function(response) {
+  //       this.student = response.data;
+  //     }.bind(this)
+  //   );
+  // },
   methods: {}
 };
 

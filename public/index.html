@@ -35,40 +35,34 @@
 
 <template id="show-page">
   <div class="container">
-    <h1>Your Information</h1>
-    <p>
-      {{ students.first_name }} 
-    </p>
-     <p>
-      {{ students.last_name }}
-    </p>
-     <p>
-      {{ students.email }}
-    </p>
-     <p>
-      {{ students.phone_number }}
-    </p>
-     <p>
-      {{ students.short_bio }}
-    </p>
-     <p>
-      {{ students.linkedin_url }}
-    </p>
-     <p>
-      {{ students.twitter_handle }}
-    </p>
-     <p>
-      {{ students.personal_blog_url }}
-    </p>
-     <p>
-      {{ students.online_resume_url }}
-    </p>
-     <p>
-      {{ students.github_url }}
-    </p>
-     <p>
-      {{ students.photo }}
-    </p>
+    <div class="card" style="width: 60rem;">
+    <img class="card-img-top" v-bind:src="student.photo" alt="Card image cap">
+    <div class="card-body">
+      <h1>Your Information</h1>
+      <p class="card-text"> First Name: {{ student.first_name }} </p>
+      <p class="card-text"> Last Name: {{ student.last_name }}</p>
+      <p class="card-text"> Email: {{ student.email }}</p>
+      <p class="card-text"> Phone Number: {{ student.phone_number }}</p>
+      <p class="card-text"> Bio: {{ student.short_bio }}</p>
+      <p class="card-text"> LinkedIn: 
+        <a v-bind:href="student.linkedin_url"> {{ student.linkedin_url }}</a>
+      </p>
+      <p class="card-text"> Twitter: 
+        <a v-bind:href="student.twitter_handle"> {{ student.twitter_handle }}</a>
+      </p>
+      <p class="card-text"> Personal Blog:
+        <a v-bind:href="student.personal_blog_url">  {{ student.personal_blog_url }}</a>
+      </p>
+      <p class="card-text"> Online Resume:
+        <a v-bind:href="student.online_resume_url"> {{ student.online_resume_url }}</a>
+      </p>
+      <p class="card-text"> GitHub:
+        <a v-bind:href="student.github_url"> {{ student.github_url }}</a>
+      </p>
+      <!-- <p class="card-text"> Photo: {{ student.photo }}</p> -->
+    </div>
+  </div>
+
   </div>
 </template>
 
