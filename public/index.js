@@ -72,6 +72,36 @@ var EditPage = {
   }
 };
 
+var ShowPage = {
+  template: "#show-page",
+  data: function() {
+    return {
+      students: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        short_bio: "",
+        linkedin_url: "",
+        twitter_handle: "",
+        personal_blog_url: "",
+        online_resume_url: "",
+        github_url: "",
+        photo: ""
+      },
+      errors: []
+    };
+  },
+  created: function() {
+    axios.get("/v1/students").then(
+      function(response) {
+        this.students = response.data;
+      }.bind(this)
+    );
+  },
+  methods: {}
+};
+
 var LoginPage = {
   template: "#login-page",
   data: function() {
