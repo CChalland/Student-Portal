@@ -16,21 +16,30 @@ var EditPage = {
   template: "#edit-page",
   data: function() {
     return {
-      first_name: "",
-      last_name: "",
-      email: "",
-      phone_number: "",
-      short_bio: "",
-      linkedin_url: "",
-      twitter_handle: "",
-      personal_blog_url: "",
-      online_resume_url: "",
-      github_url: "",
-      photo: "",
-      password: "",
-      passwordConfirmation: "",
+      students: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        short_bio: "",
+        linkedin_url: "",
+        twitter_handle: "",
+        personal_blog_url: "",
+        online_resume_url: "",
+        github_url: "",
+        photo: "",
+        password: "",
+        passwordConfirmation: ""
+      },
       errors: []
     };
+  },
+  created: function() {
+    axios.get("/v1/students").then(
+      function(response) {
+        this.students = response.data;
+      }.bind(this)
+    );
   },
   methods: {
     submit: function() {
@@ -50,7 +59,7 @@ var EditPage = {
         password_confirmation: this.passwordConfirmation
       };
       axios
-        .post("/v1/users", params)
+        .path("/v1/students", params)
         .then(function(response) {
           router.push("/login");
         })
