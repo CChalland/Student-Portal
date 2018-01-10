@@ -37,7 +37,7 @@ var EditPage = {
   created: function() {
     axios.get("https://salty-ridge-97861.herokuapp.com/v1/students").then(
       function(response) {
-        this.student = response.data[0];
+        this.student = response.data[0]; // Change once rails back end params search route is created
       }.bind(this)
     );
   },
@@ -97,7 +97,7 @@ var ShowPage = {
   created: function() {
     axios.get("https://salty-ridge-97861.herokuapp.com/v1/students").then(
       function(response) {
-        this.student = response.data[0];
+        this.student = response.data[0]; // Change once rails back end params search route is created
       }.bind(this)
     );
   },
