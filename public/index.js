@@ -82,7 +82,7 @@ var ShowPage = {
         email: "cheekymark@email.com",
         phone_number: "312-213-3433",
         short_bio:
-          "I'm a cheeky chap from England and struggle with american day to day living.",
+          "I'm a cheeky chap from England and struggles with american day to day living.",
         linkedin_url: "https://www.linkedin.com./in/KingOfChaps",
         twitter_handle: "@ChappyCheeks",
         personal_blog_url: "https://www.markschappycheeks.com",
