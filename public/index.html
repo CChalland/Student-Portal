@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>My App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
@@ -90,10 +95,13 @@
 
 <template id="edit-page">
   <div class="vue-component">
-
     <div class="container">
-      <h1>Edit Student</h1>
-      <ul>
+      <div class="card" style="width: 50rem;">
+      <img class="card-img-top" src="..." alt="Student's Photo">
+      <div class="card-body">
+        <h5 class="card-title">Edit Student's Information</h5>
+        <p class="card-text">Fill in the text boxes for the information you want to update</p>
+        <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
       <div class="form-group">
@@ -160,6 +168,7 @@
         <input type="password" class="form-control" v-model="passwordConfirmation">
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+      </div>
     </div>
   </div>
 </template>
