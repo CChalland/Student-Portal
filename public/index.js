@@ -76,7 +76,7 @@ var ShowPage = {
   template: "#show-page",
   data: function() {
     return {
-      students: {
+      student: {
         first_name: "",
         last_name: "",
         email: "",
@@ -95,7 +95,7 @@ var ShowPage = {
   created: function() {
     axios.get("/v1/students").then(
       function(response) {
-        this.students = response.data;
+        this.student = response.data;
       }.bind(this)
     );
   },
@@ -146,6 +146,7 @@ var LogoutPage = {
 var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
+    { path: "/show", component: ShowPage },
     { path: "/edit", component: EditPage },
     { path: "/login", component: LoginPage },
     { path: "/logout", component: LogoutPage }
