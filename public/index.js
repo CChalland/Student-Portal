@@ -16,7 +16,7 @@ var EditPage = {
   template: "#edit-page",
   data: function() {
     return {
-      students: {
+      student: {
         first_name: "",
         last_name: "",
         email: "",
@@ -37,7 +37,7 @@ var EditPage = {
   created: function() {
     axios.get("/v1/students").then(
       function(response) {
-        this.students = response.data;
+        this.student = response.data;
       }.bind(this)
     );
   },
