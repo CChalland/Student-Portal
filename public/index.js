@@ -94,13 +94,13 @@ var ShowPage = {
       errors: []
     };
   },
-  // created: function() {
-  //   axios.get("/v1/students").then(
-  //     function(response) {
-  //       this.student = response.data;
-  //     }.bind(this)
-  //   );
-  // },
+  created: function() {
+    axios.get("/v1/students").then(
+      function(response) {
+        this.student = response.data;
+      }.bind(this)
+    );
+  },
   methods: {}
 };
 
