@@ -35,31 +35,31 @@ var EditPage = {
     };
   },
   created: function() {
-    axios.get("/v1/students").then(
+    axios.get("https://salty-ridge-97861.herokuapp.com/v1/students").then(
       function(response) {
-        this.student = response.data;
+        this.student = response.data[0];
       }.bind(this)
     );
   },
   methods: {
     submit: function() {
       var params = {
-        first_name: this.first_name,
-        last_name: this.last_name,
-        email: this.email,
-        phone_number: this.phone_number,
-        short_bio: this.short_bio,
-        linkedin_url: this.linkedin_url,
-        twitter_handle: this.twitter_handle,
-        personal_blog_url: this.personal_blog_url,
-        online_resume_url: this.online_resume_url,
-        github_url: this.github_url,
-        photo: this.photo,
-        password: this.password,
-        password_confirmation: this.passwordConfirmation
+        first_name: this.student.first_name,
+        last_name: this.student.last_name,
+        email: this.student.email,
+        phone_number: this.student.phone_number,
+        short_bio: this.student.short_bio,
+        linkedin_url: this.student.linkedin_url,
+        twitter_handle: this.student.twitter_handle,
+        personal_blog_url: this.student.personal_blog_url,
+        online_resume_url: this.student.online_resume_url,
+        github_url: this.student.github_url,
+        photo: this.student.photo,
+        password: this.student.password,
+        password_confirmation: this.student.passwordConfirmation
       };
       axios
-        .path("/v1/students", params)
+        .path("https://salty-ridge-97861.herokuapp.com/v1/students", params)
         .then(function(response) {
           router.push("/login");
         })
@@ -95,9 +95,9 @@ var ShowPage = {
     };
   },
   created: function() {
-    axios.get("/v1/students").then(
+    axios.get("https://salty-ridge-97861.herokuapp.com/v1/students").then(
       function(response) {
-        this.student = response.data;
+        this.student = response.data[0];
       }.bind(this)
     );
   },
@@ -119,7 +119,7 @@ var LoginPage = {
         auth: { email: this.email, password: this.password }
       };
       axios
-        .post("/user_token", params)
+        .post("https://salty-ridge-97861.herokuapp.com/student_token", params)
         .then(function(response) {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
