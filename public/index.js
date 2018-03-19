@@ -147,8 +147,8 @@ var LogoutPage = {
 
 var router = new VueRouter({
   routes: [
-    { path: "/", component: ShowPage },
-    { path: "/home", component: HomePage },
+    { path: "/", component: HomePage },
+    { path: "/show", component: ShowPage },
     { path: "/edit", component: EditPage },
     { path: "/login", component: LoginPage },
     { path: "/logout", component: LogoutPage }
